@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # load dataset
 # df = pd.read_csv('../../datasets/Lomba_dataset.csv', encoding='latin1')
-df = pd.read_csv('datasets/Lomba_dataset.csv', encoding='latin1')
+df = pd.read_csv('src/datasets/Lomba_dataset.csv', encoding='latin1')
 
 # input colom
 df['all_words'] = df['title'] + ' ' + df['category_id'] + ' ' +  df['organizer_id'] + ' ' + df['description']
@@ -22,7 +22,7 @@ tfidf_matrix = vectorizer.fit_transform(df['all_words'])
 
 #load model
 # loaded_model = tf.keras.models.load_model('../../save_models/cb_model.h5')
-loaded_model = tf.keras.models.load_model('save_models/cb_model.h5')
+loaded_model = tf.keras.models.load_model('src/save_models/cb_model.h5')
 
 # Getting recommendations using the trained model
 predictions = loaded_model.predict(tfidf_matrix.toarray())

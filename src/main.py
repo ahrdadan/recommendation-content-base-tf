@@ -1,7 +1,6 @@
 from enum import Enum
 from fastapi import FastAPI
-from recommenders.content_base.predict_cb import get_lomba_recommendations
-import time
+from src.recommenders.content_base.predict_cb import get_lomba_recommendations
 
 class ModelName(str, Enum):
     cb = "cb"
